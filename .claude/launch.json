@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "portfolio",
+      "runtimeExecutable": "C:\\Program Files (x86)\\MGLTools-1.5.7\\python.exe",
+      "runtimeArgs": ["-u", "C:\\Users\\piyus\\AppData\\Local\\Temp\\claude\\C--Users-piyus-OneDrive-Pictures-portfolio\\ebc89bfa-56ad-49d7-9c1c-97cde52d57c2\\scratchpad\\serve.py", "C:\\Users\\piyus\\OneDrive\\Pictures\\portfolio", "8766"],
+      "port": 8766
+    }
+  ]
+}

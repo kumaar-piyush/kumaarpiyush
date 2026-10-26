@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Piyush Kumar — Portfolio</title>
+  <meta name="description" content="Piyush Kumar, structural bioinformatician working across database development, drug discovery and network biology. I solve biological puzzles the way you solve a cube.">
+  <meta name="author" content="Piyush Kumar">
+  <meta name="theme-color" content="#F5EBDD">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23413333'/%3E%3Crect x='4' y='4' width='11' height='11' rx='3' fill='%23F2765E'/%3E%3Crect x='17' y='4' width='11' height='11' rx='3' fill='%23F5C518'/%3E%3Crect x='4' y='17' width='11' height='11' rx='3' fill='%23315B8C'/%3E%3Crect x='17' y='17' width='11' height='11' rx='3' fill='%231FA34A'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================== NAVBAR ============================== -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#top" aria-label="Back to top">
+        <span class="cube-icon" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span class="brand-name" data-bind="brand">Piyush.</span>
+      </a>
+
+      <nav class="nav-pill" aria-label="Sections">
+        <a href="#work">Work</a>
+        <a href="#process">Process</a>
+        <a href="#about">About</a>
+      </nav>
+
+      <div class="nav-right">
+        <ul class="nav-socials" id="nav-socials"></ul>
+        <a class="nav-icon nav-contact" href="#contact" aria-label="Contact" title="Contact">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 7.5l8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============================== HERO ============================== -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <h1 class="hero-title reveal" id="hero-title" data-bind="greeting">Hi, I'm Piyush.</h1>
+
+      <div class="cube-stage" id="cube-stage">
+        <div class="ink-burst" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="cube-shadow" aria-hidden="true"></div>
+        <div class="cube-mount" id="cube" tabindex="0" role="img"
+             aria-label="A 3D Rubik's cube whose front face spells PORTFOLIO. Drag it, or use the arrow keys, to spin it."></div>
+      </div>
+
+      <p class="hero-sub reveal" style="--d:.1s">And this is my portfolio.</p>
+      <p class="hero-intro reveal" style="--d:.18s">
+        <strong data-bind="role">Structural Bioinformatician.</strong>
+        <span data-bind="intro">I solve biological puzzles the way you solve a cube. I study the pattern in the data, make a deliberate move, then test it until every side lines up.</span>
+      </p>
+      <div class="hero-ctas reveal" style="--d:.26s">
+        <a class="btn btn-primary" href="#work">See work <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn btn-secondary" href="#contact">Let's talk</a>
+      </div>
+
+      <!-- Floating sticker cards (float around the cube on desktop, 2-col grid on mobile) -->
+      <div class="hero-cards">
+        <div class="float-card fc-available" data-depth="0.8" style="--rot:-2deg; --delay:0s">
+          <div class="card card-available">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            <p><strong data-bind="availTitle">Available for work</strong><span data-bind="availNote">Open to freelance &amp; full-time roles</span></p>
+          </div>
+        </div>
+
+        <div class="float-card fc-stats" data-depth="1.3" style="--rot:-4deg; --delay:-1.7s">
+          <div class="card card-stats" id="hero-stats"></div>
+        </div>
+
+        <div class="float-card fc-puzzle" data-depth="0.6" style="--rot:2deg; --delay:-0.9s">
+          <div class="card card-puzzle" data-state="thinking">
+            <span class="card-label">The puzzle</span>
+            <p class="puzzle-word" id="puzzle-word">Thinking…</p>
+            <p class="puzzle-caption" id="puzzle-caption">loading the cube</p>
+            <div class="puzzle-bar" aria-hidden="true"><span id="puzzle-fill"></span></div>
+            <button class="btn-scramble" id="scramble-btn" type="button" aria-disabled="true">Scramble it <span aria-hidden="true">⟳</span></button>
+            <p class="puzzle-hint">or drag the cube to spin it</p>
+          </div>
+        </div>
+
+        <div class="float-card fc-featured" data-depth="1.1" style="--rot:3.5deg; --delay:-2.6s">
+          <a class="card card-featured" id="featured-card" href="#work">
+            <span class="card-label">Featured case</span>
+            <span class="featured-title" id="featured-title"></span>
+            <span class="featured-foot">
+              <span id="featured-label"></span>
+              <span class="featured-metric" id="featured-metric"></span>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <p class="sr-only" id="cube-live" aria-live="polite"></p>
+    </section>
+
+    <!-- ============================== SKILLS MARQUEE ============================== -->
+    <section class="skills" id="skills" aria-label="Skills">
+      <div class="marquee-row"><div class="marquee-track" style="--dur:46s"></div></div>
+      <div class="marquee-row marquee-reverse" aria-hidden="true"><div class="marquee-track" style="--dur:52s"></div></div>
+    </section>
+
+    <!-- ============================== WORK: ABOUT ME + SCIENCE IN MOTION ============================== -->
+    <section class="section showcase" id="work" aria-labelledby="science-title">
+      <div class="wrap showcase-grid">
+        <!-- About Me card -->
+        <article class="am-card reveal" aria-label="About me">
+          <p class="am-tab">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 3-3 3-3-3zM19 9l3 3-3 3-3-3zM5 9l3 3-3 3-3-3zM12 16l3 3-3 3-3-3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+            About Me
+          </p>
+          <div class="am-portrait">
+            <span class="am-ring" aria-hidden="true"></span>
+            <span class="am-disc" aria-hidden="true"></span>
+            <img class="am-photo" id="am-photo" src="images/piyush-cutout.webp" width="900" height="1048" alt="Portrait of Piyush Kumar" loading="lazy" decoding="async">
+          </div>
+          <div class="am-foot">
+            <p class="am-name"><span class="am-hi">I'm,</span> <span id="am-first">Piyush</span> <span id="am-last">Kumar</span></p>
+            <a class="am-contact" id="am-contact" href="https://www.linkedin.com/in/piyushkumaar" target="_blank" rel="noopener">
+              <span id="am-contact-text">linkedin.com/in/piyushkumaar</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4zM4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <div class="am-badge" aria-hidden="true">
+            <svg viewBox="0 0 120 120">
+              <defs><path id="badge-path" d="M60,60 m-41,0 a41,41 0 1,1 82,0 a41,41 0 1,1 -82,0"/></defs>
+              <text><textPath href="#badge-path" id="badge-text" textLength="256">MY RESEARCH PORTFOLIO · 2026 ·</textPath></text>
+            </svg>
+            <span class="am-badge-dot"></span>
+          </div>
+        </article>
+
+        <!-- Science in motion bento -->
+        <div class="sim">
+          <div class="sim-head reveal">
+            <h2 class="sim-title" id="science-title">Science in motion</h2>
+            <span class="corner corner-lg" aria-hidden="true"></span>
+            <p class="sim-topics" id="sim-topics"></p>
+          </div>
+          <div class="sim-grid" id="sim-grid">
+            <figure class="sim-media reveal">
+              <div class="sim-canvas" id="molecule" role="img" aria-label="3D model of a small molecule bound in a protein pocket"></div>
+              <button class="sim-play" id="sim-play" type="button" aria-pressed="false" aria-label="Play the molecule animation">
+                <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>
+                <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z" fill="currentColor"/></svg>
+              </button>
+              <figcaption class="sim-caption">
+                <span class="sim-film" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M7 4v16M17 4v16M3 9h4M3 15h4M17 9h4M17 15h4" stroke="currentColor" stroke-width="1.8"/></svg>
+                </span>
+                <span><strong id="sim-media-title">Research in action</strong><span id="sim-media-text"></span></span>
+              </figcaption>
+              <span class="corner" aria-hidden="true"></span>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== PROCESS ============================== -->
+    <section class="section process" id="process" aria-labelledby="process-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2 class="section-title" id="process-title">How I <em>solve</em> it</h2>
+          <p class="section-lede">Every project starts as a scrambled cube. These are the four moves I make every time.</p>
+        </div>
+        <ol class="process-grid" id="process-grid"></ol>
+      </div>
+    </section>
+
+    <!-- ============================== ABOUT / EXPERIENCE ============================== -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="wrap about-grid">
+        <div class="about-left">
+          <h2 class="eyebrow reveal" id="about-title"><span class="eyebrow-dot" aria-hidden="true"></span>About</h2>
+          <p class="about-bio reveal" id="about-bio"></p>
+          <p class="about-more reveal" id="about-more"></p>
+          <figure class="photo-frame reveal" id="photo-frame"></figure>
+        </div>
+
+        <div class="about-right">
+          <h3 class="col-title reveal">Experience</h3>
+          <ol class="timeline" id="timeline"></ol>
+
+          <h3 class="col-title reveal" id="creds-title">Education &amp; publications</h3>
+          <ul class="sticker-grid" id="sticker-grid"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== CONTACT ============================== -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <p class="avail-chip reveal"><span class="pulse-dot" aria-hidden="true"></span><span><span data-bind="availTitle">Available for work</span><span class="chip-note"> · <span data-bind="availNote">Open to freelance &amp; full-time roles</span></span></span></p>
+        <h2 class="contact-title" id="contact-title">Let's solve <em>your</em> next puzzle.</h2>
+        <p class="contact-text reveal" id="contact-text"></p>
+        <div class="contact-ctas reveal">
+          <a class="btn btn-primary btn-lg" id="say-hello" href="https://www.linkedin.com/in/piyushkumaar">Say hello <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+        <ul class="contact-socials reveal" id="contact-socials"></ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================== FOOTER ============================== -->
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <p>© <span id="year">2026</span> <span data-bind="name">Piyush Kumar</span></p>
+      <span class="cube-icon" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <a class="to-top" href="#top">Back to top <span aria-hidden="true">↑</span></a>
+    </div>
+  </footer>
+
+  <!-- Three.js for the hero cube (falls back to a CSS 3D cube if this or WebGL is unavailable) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
